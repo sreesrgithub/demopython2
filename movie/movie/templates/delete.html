@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+  .container .body {
+  position: absolute;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+
+</style>
+<div class="container">
+  <div class="body">
+    <form method="post">
+        {% csrf_token %}
+        <br><br>
+      <h3><center>Click to delete the item</center></h3>
+        <br><br>
+        <button class="button">Delete</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

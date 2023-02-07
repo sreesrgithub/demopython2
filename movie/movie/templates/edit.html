@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+
+.container .body {
+  position: absolute;
+  justify-content: center;
+  max-width: 700px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.button:hover {
+  opacity: 1;
+}
+</style>
+
+<div class="container">
+   <div class="body">
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{key4.as_p}}
+  <button class="button">Update</button>
+</form>
+   </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body style="background-color: coral !important" >
+<br>
+<div class="container">
+    <div class="row gy-3">
+        {% for i in key1 %}
+            <div class="col-9 col-sm-12 col-md-4 col-lg-3">
+
+                <div class="card h-100">
+                    <img src="{{ i.image.url }}" class="card-img-top" alt="image" width="400" height="300">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ i.name }}</h5>
+                            <p class="card text-center"></p>
+                        <a href="{% url 'movieapp:details' i.id %}" class="btn btn-outline-primary">View details</a>
+                        </div>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+
+{% endblock %}
